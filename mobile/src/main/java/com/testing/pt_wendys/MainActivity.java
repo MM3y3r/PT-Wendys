@@ -181,4 +181,15 @@ public class MainActivity extends AppCompatActivity {
         Resources r = getResources();
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
+
+    private void createRecipe(){
+        int[] foodpic = new int[]{
+                R.drawable.album1};
+
+        Ingredient i1 = new Ingredient (104, "kg", "Avocado");
+
+        Ingredient[] igua = new Ingredient[]{i1};
+
+        Recipe r = new Recipe ("Guacamole", 15083, foodpic[0], igua, "Avocado aufschneiden und dann Kern raus und keine Lust mehr");
+    }
 }
