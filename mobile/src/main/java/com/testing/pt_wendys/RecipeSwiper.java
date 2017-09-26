@@ -1,5 +1,6 @@
 package com.testing.pt_wendys;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -24,7 +25,10 @@ public class RecipeSwiper extends AppCompatActivity {
                     mTextMessage.setText(R.string.title_dashboard);
                     return true;
                 case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                    //mTextMessage.setText(R.string.title_notifications);
+                    Intent i = new Intent(RecipeSwiper.this, ShoppingList.class);
+                    startActivity(i);
+
                     return true;
             }
             return false;
