@@ -29,7 +29,6 @@ public class RecipeSwiper extends AppCompatActivity {
             }
             return false;
         }
-
     };
 
     @Override
@@ -41,5 +40,4 @@ public class RecipeSwiper extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
-
 }
