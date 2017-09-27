@@ -46,7 +46,7 @@ public class ShoppingList extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.list);
 
         // Defined Array values to show in ListView
-        String[] ingredients = new String[] { "Android List View",
+       /** String[] ingredients = new String[] { "Android List View",
                 "Adapter implementation",
                 "Simple List View In Android",
                 "Create List View Android",
@@ -54,12 +54,20 @@ public class ShoppingList extends AppCompatActivity {
                 "List View Source Code",
                 "List View Array Adapter",
                 "Android Example List View"
-        };
+        };*/
 
+        Recipe r = createRecipe();
+
+        final Ingredient[] ingredientList = r.getIngredients();
+// 2
+       IngredientAdapter adapter = new IngredientAdapter(this, ingredientList);
+       listView.setAdapter(adapter);
+
+        // String [] ingredients =
         //https://www.raywenderlich.com/124438/android-listview-tutorial
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, ingredients);
-        listView.setAdapter(adapter);
+      //  ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, ingredients);
+       // listView.setAdapter(adapter);
 // 3
 
 
@@ -68,5 +76,16 @@ public class ShoppingList extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
+    private Recipe createRecipe(){
+        int[] foodpic = new int[]{
+                R.drawable.album1};
 
+        Ingredient i1 = new Ingredient (104, "kg", "Avocado");
+
+        Ingredient[] igua = new Ingredient[]{i1};
+
+        Recipe r = new Recipe ("Guacamole", 15083, foodpic[0], igua, "Avocado aufschneiden und dann Kern raus und keine Lust mehr");
+
+        return r;
+    }
 }

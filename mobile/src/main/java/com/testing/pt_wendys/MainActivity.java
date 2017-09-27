@@ -213,6 +213,7 @@ public class MainActivity extends AppCompatActivity {
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
 
+
 /*    private void createRecipe(){
         int[] foodpic = new int[]{
                 R.drawable.album1};
@@ -223,4 +224,5 @@ public class MainActivity extends AppCompatActivity {
 
         Recipe r = new Recipe ("Guacamole", 15083, foodpic[0], igua, "Avocado aufschneiden und dann Kern raus und keine Lust mehr");
     }*/
+
 }
