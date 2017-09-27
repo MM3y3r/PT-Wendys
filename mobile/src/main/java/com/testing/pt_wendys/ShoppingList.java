@@ -78,7 +78,7 @@ public class ShoppingList extends AppCompatActivity {
     }
     private Recipe createRecipe(){
         int[] foodpic = new int[]{
-                R.drawable.album1};
+                R.drawable.recipe1};
 
         Ingredient i1 = new Ingredient (104, "kg", "Avocado");
 
