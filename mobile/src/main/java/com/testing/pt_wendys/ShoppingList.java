@@ -10,8 +10,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ArrayAdapter;
 
-import static com.testing.pt_wendys.R.drawable.foodpic1;
-
 public class ShoppingList extends AppCompatActivity {
 
     private TextView mTextMessage;
@@ -23,10 +21,10 @@ public class ShoppingList extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_home:
+                case R.id.navigation_planner:
                     //mTextMessage.setText(R.string.title_home);
                     return true;
-                case R.id.navigation_dashboard:
+                case R.id.navigation_recipes:
                     //mTextMessage.setText(R.string.title_dashboard);
                     Intent viewShoppingList = new Intent(ShoppingList.this, MainActivity.class);
                     startActivity(viewShoppingList);

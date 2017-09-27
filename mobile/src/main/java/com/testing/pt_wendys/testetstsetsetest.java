@@ -18,10 +18,10 @@ public class testetstsetsetest extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                case R.id.navigation_planner:
+                    mTextMessage.setText(R.string.title_planner);
                     return true;
-                case R.id.navigation_dashboard:
+                case R.id.navigation_recipes:
                     mTextMessage.setText(R.string.title_dashboard);
                     Intent viewTest = new Intent(testetstsetsetest.this, MainActivity.class);
                     startActivity(viewTest);

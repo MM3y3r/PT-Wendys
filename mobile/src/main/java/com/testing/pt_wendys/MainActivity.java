@@ -37,12 +37,12 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_home:
+                case R.id.navigation_planner:
                     //mTextMessage.setText(R.string.title_home);
                     Intent viewTest = new Intent(MainActivity.this, testetstsetsetest.class);
                     startActivity(viewTest);
                     return true;
-                case R.id.navigation_dashboard:
+                case R.id.navigation_recipes:
                     //mTextMessage.setText(R.string.title_dashboard);
                     return true;
                 case R.id.navigation_shopping_list:
@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         // Bottom Nav Bar
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navigation.setSelectedItemId(R.id.navigation_recipes);
 
         initCollapsingToolbar();
 
