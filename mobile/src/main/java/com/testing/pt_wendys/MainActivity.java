@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
      * Adding few albums for testing
      */
     private void prepareAlbums() {
-        int[] covers = new int[]{
+        int[] recipeImages = new int[]{
                 R.drawable.recipe1,
                 R.drawable.foodpic1,
                 R.drawable.foodpic2,
@@ -153,34 +153,34 @@ public class MainActivity extends AppCompatActivity {
 
         // Rezept: Name, Kalorien, Bild, Array Ingredients, Beschreibung
 
-        Recipe a = new Recipe("Kamut semolina porridge", 130, covers[0], igua, "hmm");
+        Recipe a = new Recipe("Kamut semolina porridge", 130, recipeImages[0], igua, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Couscous summer salad", 800, covers[1], igua, "hmm");
+        a = new Recipe("Couscous summer salad", 800, recipeImages[1], igua, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Muffin tin egg cups", 1111, covers[2], igua, "hmm");
+        a = new Recipe("Muffin tin egg cups", 1111, recipeImages[2], igua, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Gnocchi with peas and Parmesan", 120, covers[3], igua, "hmm");
+        a = new Recipe("Gnocchi with peas and Parmesan", 120, recipeImages[3], igua, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Loaded omelette", 140, covers[4], igua, "hmm");
+        a = new Recipe("Loaded omelette", 140, recipeImages[4], igua, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Tuna salad sandwich", 123, covers[5], igua, "hmm");
+        a = new Recipe("Tuna salad sandwich", 123, recipeImages[5], igua, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Mini frittatas with spinach and bacon", 167, covers[6], igua, "hmm");
+        a = new Recipe("Mini frittatas with spinach and bacon", 167, recipeImages[6], igua, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Tomato and goat cheese tartlets", 1400, covers[7], igua, "hmm");
+        a = new Recipe("Tomato and goat cheese tartlets", 1400, recipeImages[7], igua, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Leek and apple quiche with bacon", 110, covers[8], igua, "hmm");
+        a = new Recipe("Leek and apple quiche with bacon", 110, recipeImages[8], igua, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("German-style leek and cheese soup", 170, covers[9], igua, "hmm");
+        a = new Recipe("German-style leek and cheese soup", 170, recipeImages[9], igua, "hmm");
         recipeList.add(a);
 
         adapter.notifyDataSetChanged();
@@ -230,15 +230,6 @@ public class MainActivity extends AppCompatActivity {
     private int dpToPx(int dp) {
         Resources r = getResources();
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
-    }
-
-    public void imageClick(View view) {
-        Intent intent = new Intent(this, RecipeDetail.class);
-        // Pass data object in the bundle and populate details activity.
-        //intent.putExtra(RecipeDetail.ExtraData, contact);
-        ActivityOptions options = ActivityOptions.
-                makeSceneTransitionAnimation(this, (View)recyclerView, "recipe");
-        startActivity(intent, options.toBundle());
     }
 
 

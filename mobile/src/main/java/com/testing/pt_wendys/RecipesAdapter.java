@@ -1,6 +1,8 @@
 package com.testing.pt_wendys;
 
+import android.app.ActivityOptions;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -25,9 +27,10 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
     private Context mContext;
     private List<Recipe> recipeList;
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public TextView title, count;
         public ImageView thumbnail, overflow;
+        public Recipe recipe;
 
 
         public MyViewHolder(View view) {
@@ -36,6 +39,20 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
             count = (TextView) view.findViewById(R.id.count);
             thumbnail = (ImageView) view.findViewById(R.id.recipe_thumbnail);
             overflow = (ImageView) view.findViewById(R.id.overflow);
+
+          view.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(mContext, RecipeDetail.class);
+            intent.putExtra("recipe", recipe.getName());
+            // Pass data object in the bundle and populate details activity.
+            //intent.putExtra(RecipeDetail.ExtraData, contact);
+            //intent.putExtra("test", "we are totally famous");
+            //ActivityOptions options = ActivityOptions.
+                    //makeSceneTransitionAnimation(this, (View)recyclerView, "recipe");
+            mContext.startActivity(intent);
         }
     }
 
@@ -56,6 +73,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         Recipe recipe = recipeList.get(position);
+        holder.recipe = recipe;
         holder.title.setText(recipe.getName());
         holder.count.setText(recipe.getNumOfCalories() + " Calories");
 
