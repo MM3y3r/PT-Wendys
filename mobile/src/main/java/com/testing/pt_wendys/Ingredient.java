@@ -7,12 +7,12 @@ import android.media.Image;
  */
 
 public class Ingredient {
-    double amount;
+    int amount;
     String unit;
     String name;
 
 
-    public Ingredient (float amount, String unit, String name){
+    public Ingredient (int amount, String unit, String name){
         this.amount = amount;
         this.unit = unit;
         this.name = name;
@@ -22,7 +22,7 @@ public class Ingredient {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 

@@ -1,5 +1,7 @@
 package com.testing.pt_wendys;
 
+import java.util.ArrayList;
+
 /**
  * Created by Maximilian Meyer
  */
@@ -8,24 +10,27 @@ public class Recipe_old {
     private String name;
     private int numOfCalories;
     private int thumbnail;
-    private Ingredient[] ingredients;
+    private ArrayList<Ingredient> ingredients;
     private String description;
 
     public Recipe_old() {
     }
 
-    public Recipe_old(String name, int numOfCalories, int thumbnail, Ingredient[] ingredients, String description) {
+    public Recipe_old(String name, int numOfCalories, int thumbnail,  ArrayList<Ingredient> ingredients, String description) {
         this.name = name;
         this.numOfCalories = numOfCalories;
         this.thumbnail = thumbnail;
-        this.ingredients = ingredients;
+       this.ingredients = new ArrayList<Ingredient>();
         this.description = description;
     }
 
+    public ArrayList<Ingredient> getIngredients() {
+        return ingredients;
+    }
 
-    public Ingredient[] getIngredients() { return ingredients; }
-
-    public void setIngredients(Ingredient[] ingredients) { this.ingredients = ingredients; }
+    public void setIngredients(ArrayList<Ingredient> ingredients) {
+        this.ingredients = ingredients;
+    }
 
     public String getDescription() { return description; }
 

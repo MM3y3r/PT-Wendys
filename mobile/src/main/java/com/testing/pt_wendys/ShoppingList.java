@@ -50,7 +50,7 @@ public class ShoppingList extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.list);
 
         // Defined Array values to show in ListView
-       String[] ingredients = new String[] { "Android List View",
+      /* String[] ingredients = new String[] { "Android List View",
                 "Adapter implementation",
                 "Simple List View In Android",
                 "Create List View Android",
@@ -58,17 +58,19 @@ public class ShoppingList extends AppCompatActivity {
                 "List View Source Code",
                 "List View Array Adapter",
                 "Android Example List View"
-        };
+        };*/
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, ingredients);
-        listView.setAdapter(adapter);
+
 
         //Recipe_old r = createRecipe();
 
-        /**final Ingredient[] ingredientList = r.getIngredients();
+        //final Ingredient[] ingredientList = r.getIngredients();
+
+//        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, ingredientList);
+     //   listView.setAdapter(adapter);
 // 2
-       IngredientAdapter adapter = new IngredientAdapter(this, ingredientList);
-       listView.setAdapter(adapter);*/
+      // IngredientAdapter adapter = new IngredientAdapter(this, ingredientList);
+       //listView.setAdapter(adapter);
 
         // String [] ingredients =
         //https://www.raywenderlich.com/124438/android-listview-tutorial
@@ -83,17 +85,5 @@ public class ShoppingList extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
-    private Recipe_old createRecipe(){
-        int[] foodpic = new int[]{
-                R.drawable.recipe1};
 
-
-        Ingredient i1 = new Ingredient (104, "kg", "Avocado");
-
-        Ingredient[] igua = new Ingredient[]{i1};
-
-        Recipe_old r = new Recipe_old("Guacamole", 15083, foodpic[0], igua, "Avocado aufschneiden und dann Kern raus und keine Lust mehr");
-
-        return r;
-    }
 }

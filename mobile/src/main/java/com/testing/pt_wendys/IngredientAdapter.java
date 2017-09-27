@@ -9,17 +9,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
- * Created by Regina on 27.09.2017.
- */
-
 public class IngredientAdapter extends BaseAdapter {
-
     private Context mContext;
     private LayoutInflater mInflater;
-    private Ingredient[] mDataSource;
+    private ArrayList<Ingredient> mDataSource;
 
-    public IngredientAdapter(Context context,Ingredient[] items) {
+    public IngredientAdapter(Context context, ArrayList<Ingredient> items) {
         mContext = context;
         mDataSource = items;
         mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -28,14 +23,15 @@ public class IngredientAdapter extends BaseAdapter {
     //1
     @Override
     public int getCount() {
-        return mDataSource.length;
+        return mDataSource.size();
     }
 
     //2
     @Override
     public Object getItem(int position) {
-        return mDataSource[position];
+        return mDataSource.get(position);
     }
+
 
     //3
     @Override
@@ -47,30 +43,32 @@ public class IngredientAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get view for row item
-        View rowView = mInflater.inflate(R.layout.activity_shopping, parent, false);
+        Ingredient ingredient = (Ingredient) getItem(position);
 
-        // Get title element
+        if (convertView == null) {
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.list_item_ingredient, parent, false);
+        }
+       // View rowView = mInflater.inflate(R.layout.list_item_ingredient, parent, false);
+
         TextView titleTextView =
-                (TextView) rowView.findViewById(com.testing.pt_wendys.R.id.recipe_list_title);
+                (TextView) convertView.findViewById(R.id.ingredient_name);
 
 // Get subtitle element
         TextView subtitleTextView =
-                (TextView) rowView.findViewById(com.testing.pt_wendys.R.id.recipe_list_subtitle);
+                (TextView) convertView.findViewById(R.id.ingredient_value);
 
 // Get detail element
         TextView detailTextView =
-                (TextView) rowView.findViewById(com.testing.pt_wendys.R.id.recipe_list_detail);
+                (TextView) convertView.findViewById(R.id.ingredient_amount);
 
 
 
-
-        Ingredient ingredient = (Ingredient) getItem(position);
 
 // 2
         titleTextView.setText(ingredient.name);
-        subtitleTextView.setText((int) ingredient.amount);
+        subtitleTextView.setText(ingredient.amount);
         detailTextView.setText(ingredient.unit);
 
-        return rowView;
+        return convertView;
     }
 }
