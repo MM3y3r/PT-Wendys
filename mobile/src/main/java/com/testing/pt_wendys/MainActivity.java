@@ -1,5 +1,6 @@
 package com.testing.pt_wendys;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
@@ -17,6 +18,13 @@ import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+
+// transitions
+import android.transition.AutoTransition;
+import android.transition.Explode;
+import android.transition.Fade;
+import android.transition.Slide;
+import android.transition.TransitionManager;
 
 import com.bumptech.glide.Glide;
 
@@ -40,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_planner:
                     //mTextMessage.setText(R.string.title_home);
                     Intent viewTest = new Intent(MainActivity.this, testetstsetsetest.class);
+                    //REZEPTUEBERGABE
+                    viewTest.putExtra("r",r);
                     startActivity(viewTest);
                     return true;
                 case R.id.navigation_recipes:
@@ -80,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
 
-        prepareAlbums();
+        prepareRecipes();
 
         try {
             Glide.with(this).load(R.drawable.foodcover).into((ImageView) findViewById(R.id.backdrop));
@@ -124,8 +134,10 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Adding few albums for testing
      */
-    private void prepareAlbums() {
-        int[] covers = new int[]{
+
+    private void prepareRecipes() {
+        int[] recipeImages = new int[]{
+
                 R.drawable.recipe1,
                 R.drawable.foodpic1,
                 R.drawable.foodpic2,
@@ -138,39 +150,49 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.foodpic9,
                 /*R.drawable.food,
                 R.drawable.album11*/};
+        Ingredient i1 = new Ingredient (104, "kg", "Kekse");
+        ArrayList <Ingredient> ingredients = new ArrayList<Ingredient>();
+        ingredients.add(i1);
 
-        Recipe a = new Recipe("Kamut semolina porridge", 13, covers[0]);
+        //Ingredient[] igua = new Ingredient[]{i1};
+
+
+        // Rezept: Name, Kalorien, Bild, Array Ingredients, Beschreibung
+
+        Recipe a = new Recipe("Kamut semolina porridge", 130, recipeImages[0], ingredients, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Couscous summer salad", 8, covers[1]);
+        a = new Recipe("Couscous summer salad", 800, recipeImages[1], ingredients, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Muffin tin egg cups", 11, covers[2]);
+        a = new Recipe("Muffin tin egg cups", 1111, recipeImages[2], ingredients, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Gnocchi with peas and Parmesan", 12, covers[3]);
+        a = new Recipe("Gnocchi with peas and Parmesan", 120, recipeImages[3], ingredients, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Loaded omelette", 14, covers[4]);
+        a = new Recipe("Loaded omelette", 140, recipeImages[4], ingredients, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Tuna salad sandwich", 1, covers[5]);
+        a = new Recipe("Tuna salad sandwich", 123, recipeImages[5], ingredients, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Mini frittatas with spinach and bacon", 11, covers[6]);
+        a = new Recipe("Mini frittatas with spinach and bacon", 167, recipeImages[6], ingredients, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Tomato and goat cheese tartlets", 14, covers[7]);
+        a = new Recipe("Tomato and goat cheese tartlets", 1400, recipeImages[7], ingredients, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Leek and apple quiche with bacon", 11, covers[8]);
+        a = new Recipe("Leek and apple quiche with bacon", 110, recipeImages[8], ingredients, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("German-style leek and cheese soup", 17, covers[9]);
+        a = new Recipe("German-style leek and cheese soup", 170, recipeImages[9], ingredients, "hmm");
+
         recipeList.add(a);
 
         adapter.notifyDataSetChanged();
     }
+
 
     /**
      * RecyclerView item decoration - give equal margin around grid item
@@ -229,5 +251,9 @@ public class MainActivity extends AppCompatActivity {
 
         Recipe_old r = new Recipe_old ("Guacamole", 15083, foodpic[0], igua, "Avocado aufschneiden und dann Kern raus und keine Lust mehr");
     }*/
+
+    //Test Parcelable
+
+    Recipe r = new Recipe ("Test", 300, 6, new ArrayList<Ingredient>(), "testBeschreibung" );
 
 }
