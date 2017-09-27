@@ -29,11 +29,12 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
         public TextView title, count;
         public ImageView thumbnail, overflow;
 
+
         public MyViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.title);
             count = (TextView) view.findViewById(R.id.count);
-            thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
+            thumbnail = (ImageView) view.findViewById(R.id.recipe_thumbnail);
             overflow = (ImageView) view.findViewById(R.id.overflow);
         }
     }
