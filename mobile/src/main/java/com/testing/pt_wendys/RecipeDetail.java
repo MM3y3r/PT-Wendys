@@ -9,6 +9,8 @@ import android.view.View;
 
 public class RecipeDetail extends AppCompatActivity {
 
+    //Bundle bundle=this.getIntent().getExtras();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
