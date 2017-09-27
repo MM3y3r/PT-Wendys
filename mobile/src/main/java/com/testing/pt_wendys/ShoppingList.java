@@ -56,6 +56,8 @@ public class ShoppingList extends AppCompatActivity {
                 "Android Example List View"
         };
 
+        //https://www.raywenderlich.com/124438/android-listview-tutorial
+
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, ingredients);
         listView.setAdapter(adapter);
 // 3
