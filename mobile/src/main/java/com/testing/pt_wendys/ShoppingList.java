@@ -1,5 +1,6 @@
 package com.testing.pt_wendys;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -7,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.ArrayAdapter;
 
 import static com.testing.pt_wendys.R.drawable.foodpic1;
 
@@ -22,13 +24,16 @@ public class ShoppingList extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                    //mTextMessage.setText(R.string.title_home);
                     return true;
                 case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                    //mTextMessage.setText(R.string.title_dashboard);
+                    Intent viewShoppingList = new Intent(ShoppingList.this, MainActivity.class);
+                    startActivity(viewShoppingList);
                     return true;
                 case R.id.navigation_shopping_list:
-                    mTextMessage.setText(R.string.title_notifications);
+                    //mTextMessage.setText(R.string.title_notifications);
+
                     return true;
             }
             return false;
@@ -47,7 +52,7 @@ public class ShoppingList extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.list);
 
         // Defined Array values to show in ListView
-       /** String[] ingredients = new String[] { "Android List View",
+       String[] ingredients = new String[] { "Android List View",
                 "Adapter implementation",
                 "Simple List View In Android",
                 "Create List View Android",
@@ -55,14 +60,17 @@ public class ShoppingList extends AppCompatActivity {
                 "List View Source Code",
                 "List View Array Adapter",
                 "Android Example List View"
-        };*/
+        };
 
-        Recipe r = createRecipe();
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, ingredients);
+        listView.setAdapter(adapter);
 
-        final Ingredient[] ingredientList = r.getIngredients();
+        //Recipe r = createRecipe();
+
+        /**final Ingredient[] ingredientList = r.getIngredients();
 // 2
        IngredientAdapter adapter = new IngredientAdapter(this, ingredientList);
-       listView.setAdapter(adapter);
+       listView.setAdapter(adapter);*/
 
         // String [] ingredients =
         //https://www.raywenderlich.com/124438/android-listview-tutorial

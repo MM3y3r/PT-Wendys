@@ -47,7 +47,7 @@ public class IngredientAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get view for row item
-        View rowView = mInflater.inflate(R.layout.list_item_ingredient, parent, false);
+        View rowView = mInflater.inflate(R.layout.activity_shopping, parent, false);
 
         // Get title element
         TextView titleTextView =
