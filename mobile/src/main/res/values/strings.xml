@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PT-Wendys</string>
+    <string name="app_name">Food Planner</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Recipes</string>
     <string name="title_notifications">Shopping</string>

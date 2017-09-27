@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.content.Intent;
 
 
 import com.bumptech.glide.Glide;
@@ -48,7 +47,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.album_card, parent, false);
+                .inflate(R.layout.recipe_card, parent, false);
 
         return new MyViewHolder(itemView);
     }
