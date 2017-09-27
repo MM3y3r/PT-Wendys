@@ -1,5 +1,6 @@
 package com.testing.pt_wendys;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
@@ -17,6 +18,13 @@ import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+
+// transitions
+import android.transition.AutoTransition;
+import android.transition.Explode;
+import android.transition.Fade;
+import android.transition.Slide;
+import android.transition.TransitionManager;
 
 import com.bumptech.glide.Glide;
 
@@ -216,6 +224,15 @@ public class MainActivity extends AppCompatActivity {
     private int dpToPx(int dp) {
         Resources r = getResources();
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
+    }
+
+    public void imageClick(View view) {
+        Intent intent = new Intent(this, RecipeDetail.class);
+        // Pass data object in the bundle and populate details activity.
+        //intent.putExtra(RecipeDetail.ExtraData, contact);
+        ActivityOptions options = ActivityOptions.
+                makeSceneTransitionAnimation(this, (View)recyclerView, "recipe");
+        startActivity(intent, options.toBundle());
     }
 
 
