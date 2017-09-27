@@ -63,7 +63,7 @@ public class ShoppingList extends AppCompatActivity {
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, ingredients);
         listView.setAdapter(adapter);
 
-        //Recipe r = createRecipe();
+        //Recipe_old r = createRecipe();
 
         /**final Ingredient[] ingredientList = r.getIngredients();
 // 2
@@ -83,7 +83,7 @@ public class ShoppingList extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
-    private Recipe createRecipe(){
+    private Recipe_old createRecipe(){
         int[] foodpic = new int[]{
                 R.drawable.recipe1};
 
@@ -92,7 +92,7 @@ public class ShoppingList extends AppCompatActivity {
 
         Ingredient[] igua = new Ingredient[]{i1};
 
-        Recipe r = new Recipe ("Guacamole", 15083, foodpic[0], igua, "Avocado aufschneiden und dann Kern raus und keine Lust mehr");
+        Recipe_old r = new Recipe_old("Guacamole", 15083, foodpic[0], igua, "Avocado aufschneiden und dann Kern raus und keine Lust mehr");
 
         return r;
     }

@@ -23,7 +23,16 @@
         </activity>
         <activity
             android:name=".testetstsetsetest"
-            android:label="@string/title_activity_testetstsetsetest"></activity>
+            android:label="@string/title_activity_testetstsetsetest" />
+        <activity
+            android:name=".RecipeDetail"
+            android:label="@string/title_activity_recipe_detail"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.testing.pt_wendys.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

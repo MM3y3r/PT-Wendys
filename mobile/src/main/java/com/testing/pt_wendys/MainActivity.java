@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private RecipesAdapter adapter;
-    private List<Album> albumList;
+    private List<Recipe> recipeList;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -71,8 +71,8 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
-        albumList = new ArrayList<>();
-        adapter = new RecipesAdapter(this, albumList);
+        recipeList = new ArrayList<>();
+        adapter = new RecipesAdapter(this, recipeList);
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(mLayoutManager);
@@ -139,35 +139,35 @@ public class MainActivity extends AppCompatActivity {
                 /*R.drawable.food,
                 R.drawable.album11*/};
 
-        Album a = new Album("Kamut semolina porridge", 13, covers[0]);
-        albumList.add(a);
+        Recipe a = new Recipe("Kamut semolina porridge", 13, covers[0]);
+        recipeList.add(a);
 
-        a = new Album("Couscous summer salad", 8, covers[1]);
-        albumList.add(a);
+        a = new Recipe("Couscous summer salad", 8, covers[1]);
+        recipeList.add(a);
 
-        a = new Album("Muffin tin egg cups", 11, covers[2]);
-        albumList.add(a);
+        a = new Recipe("Muffin tin egg cups", 11, covers[2]);
+        recipeList.add(a);
 
-        a = new Album("Gnocchi with peas and Parmesan", 12, covers[3]);
-        albumList.add(a);
+        a = new Recipe("Gnocchi with peas and Parmesan", 12, covers[3]);
+        recipeList.add(a);
 
-        a = new Album("Loaded omelette", 14, covers[4]);
-        albumList.add(a);
+        a = new Recipe("Loaded omelette", 14, covers[4]);
+        recipeList.add(a);
 
-        a = new Album("Tuna salad sandwich", 1, covers[5]);
-        albumList.add(a);
+        a = new Recipe("Tuna salad sandwich", 1, covers[5]);
+        recipeList.add(a);
 
-        a = new Album("Mini frittatas with spinach and bacon", 11, covers[6]);
-        albumList.add(a);
+        a = new Recipe("Mini frittatas with spinach and bacon", 11, covers[6]);
+        recipeList.add(a);
 
-        a = new Album("Tomato and goat cheese tartlets", 14, covers[7]);
-        albumList.add(a);
+        a = new Recipe("Tomato and goat cheese tartlets", 14, covers[7]);
+        recipeList.add(a);
 
-        a = new Album("Leek and apple quiche with bacon", 11, covers[8]);
-        albumList.add(a);
+        a = new Recipe("Leek and apple quiche with bacon", 11, covers[8]);
+        recipeList.add(a);
 
-        a = new Album("German-style leek and cheese soup", 17, covers[9]);
-        albumList.add(a);
+        a = new Recipe("German-style leek and cheese soup", 17, covers[9]);
+        recipeList.add(a);
 
         adapter.notifyDataSetChanged();
     }
@@ -227,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
 
         Ingredient[] igua = new Ingredient[]{i1};
 
-        Recipe r = new Recipe ("Guacamole", 15083, foodpic[0], igua, "Avocado aufschneiden und dann Kern raus und keine Lust mehr");
+        Recipe_old r = new Recipe_old ("Guacamole", 15083, foodpic[0], igua, "Avocado aufschneiden und dann Kern raus und keine Lust mehr");
     }*/
 
 }

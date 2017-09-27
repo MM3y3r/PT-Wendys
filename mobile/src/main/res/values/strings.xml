@@ -12,4 +12,5 @@
     <string name="backdrop_title">LOVE MUSIC</string>
     <string name="backdrop_subtitle">This season top 20 albums</string>
     <string name="title_activity_testetstsetsetest">testetstsetsetest</string>
+    <string name="title_activity_recipe_detail">RecipeDetail</string>
 </resources>
