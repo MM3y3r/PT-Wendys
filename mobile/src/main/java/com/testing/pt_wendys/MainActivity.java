@@ -1,5 +1,6 @@
 package com.testing.pt_wendys;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -19,11 +20,38 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 
+//Bottom Nav Bar
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.view.MenuItem;
+
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private RecipesAdapter adapter;
     private List<Album> albumList;
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_home:
+                    //mTextMessage.setText(R.string.title_home);
+                    return true;
+                case R.id.navigation_dashboard:
+                    //mTextMessage.setText(R.string.title_dashboard);
+                    return true;
+                case R.id.navigation_notifications:
+                    //mTextMessage.setText(R.string.title_notifications);
+                    Intent i = new Intent(MainActivity.this, ShoppingList.class);
+                    startActivity(i);
+                    return true;
+            }
+            return false;
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        // Bottom Nav Bar
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
 
         initCollapsingToolbar();
 
@@ -91,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void prepareAlbums() {
         int[] covers = new int[]{
-                R.drawable.album1,
+                R.drawable.recipe1,
                 R.drawable.album2,
                 R.drawable.album3,
                 R.drawable.album4,
@@ -103,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.album10,
                 R.drawable.album11};
 
-        Album a = new Album("True Romance", 13, covers[0]);
+        Album a = new Album("Kamut semolina porridge", 13, covers[0]);
         albumList.add(a);
 
         a = new Album("Xscpae", 8, covers[1]);
@@ -182,5 +213,16 @@ public class MainActivity extends AppCompatActivity {
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
 
+
+/*    private void createRecipe(){
+        int[] foodpic = new int[]{
+                R.drawable.album1};
+
+        Ingredient i1 = new Ingredient (104, "kg", "Avocado");
+
+        Ingredient[] igua = new Ingredient[]{i1};
+
+        Recipe r = new Recipe ("Guacamole", 15083, foodpic[0], igua, "Avocado aufschneiden und dann Kern raus und keine Lust mehr");
+    }*/
 
 }
