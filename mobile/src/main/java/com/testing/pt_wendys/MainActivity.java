@@ -1,5 +1,6 @@
 package com.testing.pt_wendys;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -44,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_notifications:
                     //mTextMessage.setText(R.string.title_notifications);
+                    Intent i = new Intent(MainActivity.this, ShoppingList.class);
+                    startActivity(i);
                     return true;
             }
             return false;
