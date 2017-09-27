@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import static com.testing.pt_wendys.R.drawable.foodpic1;
+
 public class ShoppingList extends AppCompatActivity {
 
     private TextView mTextMessage;
@@ -77,11 +79,8 @@ public class ShoppingList extends AppCompatActivity {
     }
     private Recipe createRecipe(){
         int[] foodpic = new int[]{
-<<<<<<< HEAD
                 R.drawable.recipe1};
-=======
-                R.drawable.foodpic1};
->>>>>>> 986a0ce08fd5299ff33fe7edaa14744630cb9c9a
+
 
         Ingredient i1 = new Ingredient (104, "kg", "Avocado");
 

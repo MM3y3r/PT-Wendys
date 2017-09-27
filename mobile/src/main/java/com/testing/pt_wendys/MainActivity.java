@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Bottom Nav Bar
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         initCollapsingToolbar();
 
