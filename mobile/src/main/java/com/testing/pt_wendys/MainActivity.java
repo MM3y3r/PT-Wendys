@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_planner:
                     //mTextMessage.setText(R.string.title_home);
                     Intent viewTest = new Intent(MainActivity.this, testetstsetsetest.class);
+                    //REZEPTUEBERGABE
+                    viewTest.putExtra("r",r);
                     startActivity(viewTest);
                     return true;
                 case R.id.navigation_recipes:
@@ -255,5 +257,9 @@ public class MainActivity extends AppCompatActivity {
 
         Recipe_old r = new Recipe_old ("Guacamole", 15083, foodpic[0], igua, "Avocado aufschneiden und dann Kern raus und keine Lust mehr");
     }*/
+
+    //Test Parcelable
+
+    Recipe r = new Recipe ("Test", 300, 6, new ArrayList<Ingredient>(), "testBeschreibung" );
 
 }
