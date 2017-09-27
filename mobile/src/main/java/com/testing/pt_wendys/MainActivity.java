@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
 
-        prepareAlbums();
+        prepareRecipes();
 
         try {
             Glide.with(this).load(R.drawable.foodcover).into((ImageView) findViewById(R.id.backdrop));
@@ -132,8 +132,10 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Adding few albums for testing
      */
-    private void prepareAlbums() {
+
+    private void prepareRecipes() {
         int[] recipeImages = new int[]{
+
                 R.drawable.recipe1,
                 R.drawable.foodpic1,
                 R.drawable.foodpic2,
@@ -147,44 +149,48 @@ public class MainActivity extends AppCompatActivity {
                 /*R.drawable.food,
                 R.drawable.album11*/};
         Ingredient i1 = new Ingredient (104, "kg", "Kekse");
+        ArrayList <Ingredient> ingredients = new ArrayList<Ingredient>();
+        ingredients.add(i1);
 
-        Ingredient[] igua = new Ingredient[]{i1};
+        //Ingredient[] igua = new Ingredient[]{i1};
 
 
         // Rezept: Name, Kalorien, Bild, Array Ingredients, Beschreibung
 
-        Recipe a = new Recipe("Kamut semolina porridge", 130, recipeImages[0], igua, "hmm");
+        Recipe a = new Recipe("Kamut semolina porridge", 130, recipeImages[0], ingredients, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Couscous summer salad", 800, recipeImages[1], igua, "hmm");
+        a = new Recipe("Couscous summer salad", 800, recipeImages[1], ingredients, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Muffin tin egg cups", 1111, recipeImages[2], igua, "hmm");
+        a = new Recipe("Muffin tin egg cups", 1111, recipeImages[2], ingredients, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Gnocchi with peas and Parmesan", 120, recipeImages[3], igua, "hmm");
+        a = new Recipe("Gnocchi with peas and Parmesan", 120, recipeImages[3], ingredients, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Loaded omelette", 140, recipeImages[4], igua, "hmm");
+        a = new Recipe("Loaded omelette", 140, recipeImages[4], ingredients, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Tuna salad sandwich", 123, recipeImages[5], igua, "hmm");
+        a = new Recipe("Tuna salad sandwich", 123, recipeImages[5], ingredients, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Mini frittatas with spinach and bacon", 167, recipeImages[6], igua, "hmm");
+        a = new Recipe("Mini frittatas with spinach and bacon", 167, recipeImages[6], ingredients, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Tomato and goat cheese tartlets", 1400, recipeImages[7], igua, "hmm");
+        a = new Recipe("Tomato and goat cheese tartlets", 1400, recipeImages[7], ingredients, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Leek and apple quiche with bacon", 110, recipeImages[8], igua, "hmm");
+        a = new Recipe("Leek and apple quiche with bacon", 110, recipeImages[8], ingredients, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("German-style leek and cheese soup", 170, recipeImages[9], igua, "hmm");
+        a = new Recipe("German-style leek and cheese soup", 170, recipeImages[9], ingredients, "hmm");
+
         recipeList.add(a);
 
         adapter.notifyDataSetChanged();
     }
+
 
     /**
      * RecyclerView item decoration - give equal margin around grid item
