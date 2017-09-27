@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     //mTextMessage.setText(R.string.title_home);
+                    Intent viewTest = new Intent(MainActivity.this, testetstsetsetest.class);
+                    startActivity(viewTest);
                     return true;
                 case R.id.navigation_dashboard:
                     //mTextMessage.setText(R.string.title_dashboard);
