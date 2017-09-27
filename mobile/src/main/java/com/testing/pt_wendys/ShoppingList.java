@@ -5,7 +5,6 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -26,7 +25,7 @@ public class ShoppingList extends AppCompatActivity {
                 case R.id.navigation_dashboard:
                     mTextMessage.setText(R.string.title_dashboard);
                     return true;
-                case R.id.navigation_notifications:
+                case R.id.navigation_shopping_list:
                     mTextMessage.setText(R.string.title_notifications);
                     return true;
             }
@@ -78,7 +77,7 @@ public class ShoppingList extends AppCompatActivity {
     }
     private Recipe createRecipe(){
         int[] foodpic = new int[]{
-                R.drawable.album1};
+                R.drawable.foodpic1};
 
         Ingredient i1 = new Ingredient (104, "kg", "Avocado");
 
