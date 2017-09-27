@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -12,6 +14,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -21,9 +24,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 //Bottom Nav Bar
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,10 +43,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.navigation_dashboard:
                     //mTextMessage.setText(R.string.title_dashboard);
                     return true;
-                case R.id.navigation_notifications:
+                case R.id.navigation_shopping_list:
                     //mTextMessage.setText(R.string.title_notifications);
-                    Intent i = new Intent(MainActivity.this, ShoppingList.class);
-                    startActivity(i);
+                    Intent viewShoppingList = new Intent(MainActivity.this, ShoppingList.class);
+                    startActivity(viewShoppingList);
                     return true;
             }
             return false;

@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.Intent;
+
 
 import com.bumptech.glide.Glide;
 
@@ -21,7 +23,6 @@ import java.util.List;
  */
 
 public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHolder> {
-
     private Context mContext;
     private List<Album> albumList;
 
