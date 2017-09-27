@@ -122,17 +122,17 @@ public class MainActivity extends AppCompatActivity {
      */
     private void prepareAlbums() {
         int[] covers = new int[]{
-                R.drawable.recipe1,
-                R.drawable.album2,
-                R.drawable.album3,
-                R.drawable.album4,
-                R.drawable.album5,
-                R.drawable.album6,
-                R.drawable.album7,
-                R.drawable.album8,
-                R.drawable.album9,
-                R.drawable.album10,
-                R.drawable.album11};
+                R.drawable.foodpic1,
+                R.drawable.foodpic2,
+                R.drawable.foodpic3,
+                R.drawable.foodpic4,
+                R.drawable.foodpic5,
+                R.drawable.foodpic6,
+                R.drawable.foodpic7,
+                R.drawable.foodpic8,
+                R.drawable.foodpic9,
+                /*R.drawable.food,
+                R.drawable.album11*/};
 
         Album a = new Album("Kamut semolina porridge", 13, covers[0]);
         albumList.add(a);
