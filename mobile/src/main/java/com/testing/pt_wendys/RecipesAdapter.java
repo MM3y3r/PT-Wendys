@@ -23,7 +23,7 @@ import java.util.List;
 
 public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHolder> {
     private Context mContext;
-    private List<Album> albumList;
+    private List<Recipe> recipeList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title, count;
@@ -39,9 +39,9 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
     }
 
 
-    public RecipesAdapter(Context mContext, List<Album> albumList) {
+    public RecipesAdapter(Context mContext, List<Recipe> recipeList) {
         this.mContext = mContext;
-        this.albumList = albumList;
+        this.recipeList = recipeList;
     }
 
     @Override
@@ -54,12 +54,12 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
-        Album album = albumList.get(position);
-        holder.title.setText(album.getName());
-        holder.count.setText(album.getNumOfSongs() + " songs");
+        Recipe recipe = recipeList.get(position);
+        holder.title.setText(recipe.getName());
+        holder.count.setText(recipe.getNumOfSongs() + " songs");
 
-        // loading album cover using Glide library
-        Glide.with(mContext).load(album.getThumbnail()).into(holder.thumbnail);
+        // loading recipe cover using Glide library
+        Glide.with(mContext).load(recipe.getThumbnail()).into(holder.thumbnail);
 
         holder.overflow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,6 +106,6 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
 
     @Override
     public int getItemCount() {
-        return albumList.size();
+        return recipeList.size();
     }
 }

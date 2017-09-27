@@ -14,4 +14,6 @@
     <string name="title_activity_testetstsetsetest">testetstsetsetest</string>
     <string name="title_activity_shopping2">Shopping2</string>
     <string name="title_home">Home</string>
+    <string name="title_activity_recipe_detail">RecipeDetail</string>
+
 </resources>
