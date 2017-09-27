@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_shopping_list:
                     //mTextMessage.setText(R.string.title_notifications);
-                    Intent viewShoppingList = new Intent(MainActivity.this, ShoppingList.class);
+                    Intent viewShoppingList = new Intent(MainActivity.this, Shopping2.class);
                     startActivity(viewShoppingList);
                     return true;
             }

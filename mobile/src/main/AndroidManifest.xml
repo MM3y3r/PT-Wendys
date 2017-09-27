@@ -25,6 +25,9 @@
             android:name=".testetstsetsetest"
             android:label="@string/title_activity_testetstsetsetest" />
         <activity
+
+            android:name=".Shopping2"
+            android:label="@string/title_activity_shopping2">
             android:name=".RecipeDetail"
             android:label="@string/title_activity_recipe_detail"
             android:parentActivityName=".MainActivity"
@@ -33,6 +36,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.testing.pt_wendys.MainActivity" />
         </activity>
+
     </application>
 
 </manifest>
