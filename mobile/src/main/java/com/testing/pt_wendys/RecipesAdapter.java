@@ -56,7 +56,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         Recipe recipe = recipeList.get(position);
         holder.title.setText(recipe.getName());
-        holder.count.setText(recipe.getNumOfSongs() + " songs");
+        holder.count.setText(recipe.getNumOfCalories() + " Calories");
 
         // loading recipe cover using Glide library
         Glide.with(mContext).load(recipe.getThumbnail()).into(holder.thumbnail);

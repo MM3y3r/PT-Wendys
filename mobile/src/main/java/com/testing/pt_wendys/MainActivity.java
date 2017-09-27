@@ -138,35 +138,41 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.foodpic9,
                 /*R.drawable.food,
                 R.drawable.album11*/};
+        Ingredient i1 = new Ingredient (104, "kg", "Kekse");
 
-        Recipe a = new Recipe("Kamut semolina porridge", 13, covers[0]);
+        Ingredient[] igua = new Ingredient[]{i1};
+
+
+        // Rezept: Name, Kalorien, Bild, Array Ingredients, Beschreibung
+
+        Recipe a = new Recipe("Kamut semolina porridge", 130, covers[0], igua, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Couscous summer salad", 8, covers[1]);
+        a = new Recipe("Couscous summer salad", 800, covers[1], igua, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Muffin tin egg cups", 11, covers[2]);
+        a = new Recipe("Muffin tin egg cups", 1111, covers[2], igua, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Gnocchi with peas and Parmesan", 12, covers[3]);
+        a = new Recipe("Gnocchi with peas and Parmesan", 120, covers[3], igua, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Loaded omelette", 14, covers[4]);
+        a = new Recipe("Loaded omelette", 140, covers[4], igua, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Tuna salad sandwich", 1, covers[5]);
+        a = new Recipe("Tuna salad sandwich", 123, covers[5], igua, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Mini frittatas with spinach and bacon", 11, covers[6]);
+        a = new Recipe("Mini frittatas with spinach and bacon", 167, covers[6], igua, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Tomato and goat cheese tartlets", 14, covers[7]);
+        a = new Recipe("Tomato and goat cheese tartlets", 1400, covers[7], igua, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Leek and apple quiche with bacon", 11, covers[8]);
+        a = new Recipe("Leek and apple quiche with bacon", 110, covers[8], igua, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("German-style leek and cheese soup", 17, covers[9]);
+        a = new Recipe("German-style leek and cheese soup", 170, covers[9], igua, "hmm");
         recipeList.add(a);
 
         adapter.notifyDataSetChanged();
