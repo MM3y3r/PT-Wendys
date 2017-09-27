@@ -23,7 +23,10 @@
         </activity>
         <activity
             android:name=".testetstsetsetest"
-            android:label="@string/title_activity_testetstsetsetest"></activity>
+            android:label="@string/title_activity_testetstsetsetest" />
+        <activity
+            android:name=".Shopping2"
+            android:label="@string/title_activity_shopping2"></activity>
     </application>
 
 </manifest>
