@@ -122,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void prepareAlbums() {
         int[] covers = new int[]{
+                R.drawable.recipe1,
                 R.drawable.foodpic1,
                 R.drawable.foodpic2,
                 R.drawable.foodpic3,
@@ -137,31 +138,31 @@ public class MainActivity extends AppCompatActivity {
         Album a = new Album("Kamut semolina porridge", 13, covers[0]);
         albumList.add(a);
 
-        a = new Album("Xscpae", 8, covers[1]);
+        a = new Album("Couscous summer salad", 8, covers[1]);
         albumList.add(a);
 
-        a = new Album("Maroon 5", 11, covers[2]);
+        a = new Album("Muffin tin egg cups", 11, covers[2]);
         albumList.add(a);
 
-        a = new Album("Born to Die", 12, covers[3]);
+        a = new Album("Gnocchi with peas and Parmesan", 12, covers[3]);
         albumList.add(a);
 
-        a = new Album("Honeymoon", 14, covers[4]);
+        a = new Album("Loaded omelette", 14, covers[4]);
         albumList.add(a);
 
-        a = new Album("I Need a Doctor", 1, covers[5]);
+        a = new Album("Tuna salad sandwich", 1, covers[5]);
         albumList.add(a);
 
-        a = new Album("Loud", 11, covers[6]);
+        a = new Album("Mini frittatas with spinach and bacon", 11, covers[6]);
         albumList.add(a);
 
-        a = new Album("Legend", 14, covers[7]);
+        a = new Album("Tomato and goat cheese tartlets", 14, covers[7]);
         albumList.add(a);
 
-        a = new Album("Hello", 11, covers[8]);
+        a = new Album("Leek and apple quiche with bacon", 11, covers[8]);
         albumList.add(a);
 
-        a = new Album("Greatest Hits", 17, covers[9]);
+        a = new Album("German-style leek and cheese soup", 17, covers[9]);
         albumList.add(a);
 
         adapter.notifyDataSetChanged();
