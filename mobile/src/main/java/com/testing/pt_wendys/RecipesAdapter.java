@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -61,10 +62,13 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
     }
 
 
+
+
     public RecipesAdapter(Context mContext, List<Recipe> recipeList) {
         this.mContext = mContext;
         this.recipeList = recipeList;
     }
+
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -75,7 +79,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
     }
 
     @Override
-    public void onBindViewHolder(final MyViewHolder holder, int position) {
+    public void onBindViewHolder(final MyViewHolder holder, final int position) {
         Recipe recipe = recipeList.get(position);
         holder.recipe = recipe;
         holder.title.setText(recipe.getName());
@@ -87,7 +91,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
         holder.overflow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showPopupMenu(holder.overflow);
+                showPopupMenu(holder.overflow, position);
             }
         });
     }
@@ -95,12 +99,12 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
     /**
      * Showing popup menu when tapping on 3 dots
      */
-    private void showPopupMenu(View view) {
+    private void showPopupMenu(View view, int position) {
         // inflate menu
         PopupMenu popup = new PopupMenu(mContext, view);
         MenuInflater inflater = popup.getMenuInflater();
         inflater.inflate(R.menu.menu_album, popup.getMenu());
-        popup.setOnMenuItemClickListener(new MyMenuItemClickListener());
+        popup.setOnMenuItemClickListener(new MyMenuItemClickListener(position));
         popup.show();
     }
 
@@ -109,14 +113,25 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
      */
     class MyMenuItemClickListener implements PopupMenu.OnMenuItemClickListener {
 
-        public MyMenuItemClickListener() {
+        int position;
+        public MyMenuItemClickListener(int position) {
+          position = this.position;
         }
+
 
         @Override
         public boolean onMenuItemClick(MenuItem menuItem) {
             switch (menuItem.getItemId()) {
                 case R.id.action_add_to_cart:
                     Toast.makeText(mContext, "Add to cart", Toast.LENGTH_SHORT).show();
+                    Recipe recipe = recipeList.get(position);
+                    Log.d("my pos: ",""+position);
+                    Intent viewAddtoCart = new Intent(mContext, Shopping2.class);
+                    viewAddtoCart.putExtra("r",recipe);
+
+                    mContext.startActivity(viewAddtoCart);
+
+
                     return true;
                 case R.id.action_view_detail:
                     Toast.makeText(mContext, "View ingredients", Toast.LENGTH_SHORT).show();
