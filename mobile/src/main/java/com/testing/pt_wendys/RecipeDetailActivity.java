@@ -10,7 +10,9 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
+import android.widget.ListView;
 
 import com.bumptech.glide.Glide;
 
@@ -19,7 +21,7 @@ import com.bumptech.glide.Glide;
  * Created by Maximilian Meyer
  */
 
-public class RecipeDetail extends AppCompatActivity {
+public class RecipeDetailActivity extends AppCompatActivity {
 
     //Bundle bundle=this.getIntent().getExtras();
 
@@ -38,14 +40,22 @@ public class RecipeDetail extends AppCompatActivity {
 
         //setting image data
         ImageView detailImage = findViewById(R.id.image_detail);
-        //detailImage.setImageResource(recipe.getThumbnail());
-        //Glide.with(this).load(recipe.getThumbnail()).into(detailImage);
         Drawable d = getResources().getDrawable(recipe.getThumbnail(), null);
         detailImage.setImageDrawable(d);
 
         //setting name
         TextView detailName = findViewById(R.id.name_detail);
         detailName.setText(recipe.getName());
+
+        //setting description
+        TextView detailDescription = findViewById(R.id.description_detail);
+        detailName.setText(recipe.getDescription());
+
+        // ingredients list
+        // This is the Adapter being used to display the list's data
+        SimpleCursorAdapter mAdapter;
+        ListView ingredientsList = findViewById(R.id.ingredients_detail);
+        //ingredientsList.set
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

@@ -1,6 +1,5 @@
 package com.testing.pt_wendys;
 
-import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.PopupMenu;
@@ -47,17 +46,17 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
 
         @Override
         public void onClick(View view) {
-            Intent intent = new Intent(mContext, RecipeDetail.class);
+            Intent intent = new Intent(mContext, RecipeDetailActivity.class);
             intent.putExtra("recipeData",recipe);
             /*intent.putExtra("recipeIngredients", recipe.getIngredients());
             intent.putExtra("recipeName", recipe.getName());
             intent.putExtra("recipeCals", recipe.getNumOfCalories());
             intent.putExtra("recipeDesc", recipe.getDescription());*/
             // Pass data object in the bundle and populate details activity.
-            //intent.putExtra(RecipeDetail.ExtraData, contact);
+            //intent.putExtra(RecipeDetailActivity.ExtraData, contact);
             //intent.putExtra("test", "we are totally famous");
             //ActivityOptions options = ActivityOptions.
-                    //makeSceneTransitionAnimation(this, (View) RecipeDetail, "recipeDetailContainer");
+                    //makeSceneTransitionAnimation(this, (View) RecipeDetailActivity, "recipeDetailContainer");
             mContext.startActivity(intent);
         }
     }
@@ -126,9 +125,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
             switch (menuItem.getItemId()) {
                 case R.id.action_add_to_cart:
                     Toast.makeText(mContext, "Add to cart", Toast.LENGTH_SHORT).show();
-
-
-                    Intent viewAddtoCart = new Intent(mContext, Shopping2.class);
+                    Intent viewAddtoCart = new Intent(mContext, ShoppingListActivity.class);
                     viewAddtoCart.putExtra("r",recipe);
 
                     mContext.startActivity(viewAddtoCart);

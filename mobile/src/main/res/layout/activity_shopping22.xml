@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.testing.pt_wendys.Shopping2">
+    tools:context="com.testing.pt_wendys.ShoppingListActivity">
 
     <FrameLayout
         android:id="@+id/content"

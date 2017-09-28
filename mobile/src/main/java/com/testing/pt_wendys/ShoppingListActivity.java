@@ -5,20 +5,15 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
-public class Shopping2 extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class ShoppingListActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
     private ListView listView;
@@ -36,7 +31,7 @@ public class Shopping2 extends AppCompatActivity {
                     return true;
                 case R.id.navigation_recipes:
                     //mTextMessage.setText(R.string.title_dashboard);
-                    Intent viewTest = new Intent(Shopping2.this, MainActivity.class);
+                    Intent viewTest = new Intent(ShoppingListActivity.this, MainActivity.class);
                     startActivity(viewTest);
                     return true;
                 case R.id.navigation_shopping_list:
@@ -59,7 +54,6 @@ public class Shopping2 extends AppCompatActivity {
 
 
 
-        //Recipe_old r = createRecipe();
 
        // final ArrayList<Ingredient> ingredientList = r.getIngredients();
 
