@@ -27,6 +27,7 @@ import java.util.List;
 public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHolder> {
     private Context mContext;
     private List<Recipe> recipeList;
+    private int position;
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public TextView title, count;
@@ -80,7 +81,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
-        Recipe recipe = recipeList.get(position);
+        final Recipe recipe = recipeList.get(position);
         holder.recipe = recipe;
         holder.title.setText(recipe.getName());
         holder.count.setText(recipe.getNumOfCalories() + " Calories");
@@ -91,7 +92,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
         holder.overflow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showPopupMenu(holder.overflow, position);
+                showPopupMenu(holder.overflow, recipe);
             }
         });
     }
@@ -99,12 +100,13 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
     /**
      * Showing popup menu when tapping on 3 dots
      */
-    private void showPopupMenu(View view, int position) {
+    private void showPopupMenu(View view, Recipe recipe) {
         // inflate menu
+
         PopupMenu popup = new PopupMenu(mContext, view);
         MenuInflater inflater = popup.getMenuInflater();
         inflater.inflate(R.menu.menu_album, popup.getMenu());
-        popup.setOnMenuItemClickListener(new MyMenuItemClickListener(position));
+        popup.setOnMenuItemClickListener(new MyMenuItemClickListener(recipe));
         popup.show();
     }
 
@@ -112,10 +114,10 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
      * Click listener for popup menu items
      */
     class MyMenuItemClickListener implements PopupMenu.OnMenuItemClickListener {
+        Recipe recipe;
 
-        int position;
-        public MyMenuItemClickListener(int position) {
-          position = this.position;
+        public MyMenuItemClickListener(Recipe recipe) {
+          this.recipe = recipe;
         }
 
 
@@ -124,8 +126,8 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
             switch (menuItem.getItemId()) {
                 case R.id.action_add_to_cart:
                     Toast.makeText(mContext, "Add to cart", Toast.LENGTH_SHORT).show();
-                    Recipe recipe = recipeList.get(position);
-                    Log.d("my pos: ",""+position);
+
+
                     Intent viewAddtoCart = new Intent(mContext, Shopping2.class);
                     viewAddtoCart.putExtra("r",recipe);
 
