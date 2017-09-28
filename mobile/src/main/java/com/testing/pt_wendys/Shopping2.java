@@ -71,6 +71,7 @@ public class Shopping2 extends AppCompatActivity {
 
         IngredientAdapter adapter = new IngredientAdapter(this, ingredientList);
         listView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
 
         //mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);

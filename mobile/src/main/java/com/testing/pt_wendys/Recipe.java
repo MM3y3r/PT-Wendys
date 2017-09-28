@@ -28,7 +28,7 @@ public class Recipe implements Parcelable {
         this.name = name;
         this.numOfCalories = numOfCalories;
         this.thumbnail = thumbnail;
-        this.ingredients = new ArrayList <Ingredient>();
+        this.ingredients = ingredients;
         this.description = description;
     }
 

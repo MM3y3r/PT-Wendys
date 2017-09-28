@@ -20,7 +20,7 @@ public class Recipe_old {
         this.name = name;
         this.numOfCalories = numOfCalories;
         this.thumbnail = thumbnail;
-       this.ingredients = new ArrayList<Ingredient>();
+       this.ingredients = ingredients;
         this.description = description;
     }
 

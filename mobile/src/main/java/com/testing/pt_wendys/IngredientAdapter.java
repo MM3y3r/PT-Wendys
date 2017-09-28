@@ -66,7 +66,7 @@ public class IngredientAdapter extends BaseAdapter {
 
 // 2
         titleTextView.setText(ingredient.name);
-        subtitleTextView.setText(ingredient.amount);
+        subtitleTextView.setText(""+ingredient.amount);
         detailTextView.setText(ingredient.unit);
 
         return convertView;
