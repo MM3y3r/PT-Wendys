@@ -66,12 +66,16 @@ public class Shopping2 extends AppCompatActivity {
         };
 
 
-        Recipe_old r = createRecipe();
+        //Recipe_old r = createRecipe();
 
-        final ArrayList<Ingredient> ingredientList = r.getIngredients();
+       // final ArrayList<Ingredient> ingredientList = r.getIngredients();
 
     //  ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, ingredientList);//
         // listView.setAdapter(adapter);
+
+        Bundle data = getIntent().getExtras();
+        Recipe r = data.getParcelable("recipe");
+        final ArrayList<Ingredient> ingredientList = r.getIngredients();
 
         final IngredientAdapter adapter = new IngredientAdapter(this, ingredientList);
         listView.setAdapter(adapter);

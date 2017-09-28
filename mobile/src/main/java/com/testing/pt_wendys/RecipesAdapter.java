@@ -61,10 +61,13 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
     }
 
 
+
+
     public RecipesAdapter(Context mContext, List<Recipe> recipeList) {
         this.mContext = mContext;
         this.recipeList = recipeList;
     }
+
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -109,6 +112,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
      */
     class MyMenuItemClickListener implements PopupMenu.OnMenuItemClickListener {
 
+      //  public Recipe recipe;
         public MyMenuItemClickListener() {
         }
 
@@ -117,6 +121,10 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
             switch (menuItem.getItemId()) {
                 case R.id.action_add_to_cart:
                     Toast.makeText(mContext, "Add to cart", Toast.LENGTH_SHORT).show();
+                    //Intent viewAddtoCart = new Intent(mContext, ShoppingList.class);
+                    //Recipe recipe = ;
+                    //mContext.startActivity(viewAddtoCart);
+                   // viewAddtoCart.putExtra("recipe",recipe);
                     return true;
                 case R.id.action_view_detail:
                     Toast.makeText(mContext, "View ingredients", Toast.LENGTH_SHORT).show();
