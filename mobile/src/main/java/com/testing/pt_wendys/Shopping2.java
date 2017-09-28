@@ -6,13 +6,10 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class Shopping2 extends AppCompatActivity {
 
@@ -80,7 +77,7 @@ public class Shopping2 extends AppCompatActivity {
     }
     private Recipe_old createRecipe(){
         int[] foodpic = new int[]{
-                R.drawable.recipe1};
+                R.drawable.foodpic0};
 
 
         Ingredient i1 = new Ingredient (104, "kg", "Avocado");
