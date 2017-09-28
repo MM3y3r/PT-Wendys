@@ -12,4 +12,4 @@ Functionality:
 - Use Google Maps to find supermarkets in your vicinity
 
 
-by Team PT-Wendys
+*by Team PT-Wendys*
