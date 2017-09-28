@@ -1,5 +1,6 @@
 # PT-Wendys
-Be smart. Make better choices. Live healthy.
+
+## Be smart. Make better choices. Live healthy.
 
 Welcome to our healthy living initiative!
 
