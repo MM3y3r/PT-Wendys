@@ -81,18 +81,18 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
-        final Recipe recipe = recipeList.get(position);
-        holder.recipe = recipe;
-        holder.title.setText(recipe.getName());
-        holder.count.setText(recipe.getNumOfCalories() + " Calories");
+        final Recipe recipe2 = recipeList.get(position);
+        holder.recipe = recipe2;
+        holder.title.setText(recipe2.getName());
+        holder.count.setText(recipe2.getNumOfCalories() + " Calories");
 
         // loading recipe cover using Glide library
-        Glide.with(mContext).load(recipe.getThumbnail()).into(holder.thumbnail);
+        Glide.with(mContext).load(recipe2.getThumbnail()).into(holder.thumbnail);
 
         holder.overflow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showPopupMenu(holder.overflow, recipe);
+                showPopupMenu(holder.overflow, recipe2);
             }
         });
     }
