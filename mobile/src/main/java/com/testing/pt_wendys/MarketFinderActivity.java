@@ -4,12 +4,19 @@ import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
+
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.places.Places;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -19,10 +26,11 @@ import com.google.android.gms.maps.model.LatLng;
 import static java.security.AccessController.getContext;
 
 
-public class MarketFinderActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MarketFinderActivity extends FragmentActivity implements OnMapReadyCallback, OnConnectionFailedListener {
     public static final int MY_PERMISSION_REQUEST_LOCATION = 0;
     int LOCATION_PERMISSION_REQUEST_CODE = 0;
     private GoogleMap mMap;
+    private GoogleApiClient mGoogleApiClient;
 
     private boolean doesUserHavePermission()
     {
@@ -34,6 +42,13 @@ public class MarketFinderActivity extends FragmentActivity implements OnMapReady
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_market_finder);
+
+        mGoogleApiClient = new GoogleApiClient
+                .Builder(this)
+                .addApi(Places.GEO_DATA_API)
+                .addApi(Places.PLACE_DETECTION_API)
+                .enableAutoManage(this, this)
+                .build();
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -126,5 +141,9 @@ public class MarketFinderActivity extends FragmentActivity implements OnMapReady
         //LatLng me = new LatLng(myLocation.getLatitude(), myLocation.getLongitude());
         //mMap.addMarker(new MarkerOptions().position(me).title("It's me!"));
         //mMap.moveCamera(CameraUpdateFactory.newLatLng());
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
     }
 }
