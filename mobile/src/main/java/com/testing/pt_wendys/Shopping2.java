@@ -6,12 +6,16 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Shopping2 extends AppCompatActivity {
@@ -64,14 +68,21 @@ public class Shopping2 extends AppCompatActivity {
 
         Recipe_old r = createRecipe();
 
-        ArrayList<Ingredient> ingredientList = r.getIngredients();
+        final ArrayList<Ingredient> ingredientList = r.getIngredients();
 
     //  ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, ingredientList);//
         // listView.setAdapter(adapter);
 
-        IngredientAdapter adapter = new IngredientAdapter(this, ingredientList);
+        final IngredientAdapter adapter = new IngredientAdapter(this, ingredientList);
         listView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+               ingredientList.remove(position);
+                adapter.notifyDataSetChanged();
+            }
+        });
 
         //mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
@@ -85,10 +96,14 @@ public class Shopping2 extends AppCompatActivity {
 
         Ingredient i1 = new Ingredient (104, "kg", "Avocado");
         Ingredient i2 = new Ingredient(2, "Stück", "Zitrone");
+        Ingredient[] ingredientArray = {new Ingredient(104, "kg", "Avocado"), new Ingredient(2, "Stück", "Zitrone")};
+
 
         ArrayList<Ingredient> igua = new ArrayList<Ingredient>();
-        igua.add(i1);
-        igua.add(i2);
+        igua.addAll(Arrays.asList(ingredientArray));
+        //igua.add(i1);
+        //igua.add(i2);
+
 
         Recipe_old r = new Recipe_old("Guacamole", 15083, foodpic[0], igua, "Avocado aufschneiden und dann Kern raus und keine Lust mehr");
 
