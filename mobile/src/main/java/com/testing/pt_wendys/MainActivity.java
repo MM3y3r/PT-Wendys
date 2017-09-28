@@ -1,6 +1,5 @@
 package com.testing.pt_wendys;
 
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
@@ -20,11 +19,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 // transitions
-import android.transition.AutoTransition;
-import android.transition.Explode;
-import android.transition.Fade;
-import android.transition.Slide;
-import android.transition.TransitionManager;
 
 import com.bumptech.glide.Glide;
 
@@ -144,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
     private void prepareRecipes() {
         int[] recipeImages = new int[]{
 
-                R.drawable.recipe1,
+                R.drawable.foodpic0,
                 R.drawable.foodpic1,
                 R.drawable.foodpic2,
                 R.drawable.foodpic3,
