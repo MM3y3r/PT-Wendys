@@ -1,4 +1,4 @@
-# PT-Wendys
+# The Food Planner
 
 ## Be smart. Make better choices. Live healthy.
 
@@ -10,3 +10,6 @@ Functionality:
 - Choose from a wide variety of recipes
 - Add ingredients to your shopping cart
 - Use Google Maps to find supermarkets in your vicinity
+
+
+by Team PT-Wendys
