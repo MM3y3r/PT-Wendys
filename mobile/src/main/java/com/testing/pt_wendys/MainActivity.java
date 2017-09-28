@@ -172,38 +172,38 @@ public class MainActivity extends AppCompatActivity {
 
         // Rezept: Name, Kalorien, Bild, Array Ingredients, Beschreibung
 
-        Recipe a = new Recipe("Kamut semolina porridge", 130, recipeImages[0], kamutPorridge, "Add plant-based milk to a saucepan over medium-low heat and bring to a boil. Add kamut semolina, poppy seeds, and maple syrup and stir to combine. Remove from heat.\n" +
+        Recipe a = new Recipe("Kamut semolina porridge", 230, recipeImages[0], kamutPorridge, "Add plant-based milk to a saucepan over medium-low heat and bring to a boil. Add kamut semolina, poppy seeds, and maple syrup and stir to combine. Remove from heat.\n" +
                 "While still hot, transfer porridge to serving bowls and let sit for approx. 5 – 10 min. Garnish with berries and top with more maple syrup, if desired. Enjoy!\n");
         recipeList.add(a);
 
-        a = new Recipe("Couscous summer salad", 800, recipeImages[1],minifrittatas, "hmm");
+        a = new Recipe("Couscous summer salad", 668, recipeImages[1],minifrittatas, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Muffin tin egg cups", 1111, recipeImages[2], minifrittatas, "hmm");
+        a = new Recipe("Muffin tin egg cups", 60, recipeImages[2], minifrittatas, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Gnocchi with peas and Parmesan", 120, recipeImages[3], minifrittatas, "hmm");
+        a = new Recipe("Gnocchi with peas and Parmesan", 618, recipeImages[3], minifrittatas, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Loaded omelette", 140, recipeImages[4], minifrittatas, "Halve the tomatoes and cut the bell pepper and avocado into cubes. Cut the chorizo, spring onions, and mozzarella into large pieces, and chop the parsley.\n" +
+        a = new Recipe("Loaded omelette", 733, recipeImages[4], minifrittatas, "Halve the tomatoes and cut the bell pepper and avocado into cubes. Cut the chorizo, spring onions, and mozzarella into large pieces, and chop the parsley.\n" +
                 "Beat the eggs and whisk in the milk. Add oregano, half of the parsley, nutmeg, and salt and pepper to taste.\n" +
                 "Melt the butter in a nonstick pan over medium-high heat. Fry the chorizo for approx. 2 min., or until the fat begins to render. Add bell pepper and fry for approx. 2 min. longer before reducing the heat to medium-low. Add the tomatoes, then add the egg mixture. Cook the omelette for approx. 4 min. with the lid on.\n" +
                 "As soon as the omelette is half-cooked, spread the avocado, mozzarella, and spring onions over it. Place the lid back on and allow the omelet to cook for approx. 2 min. more. Serve and garnish with parsley. Enjoy!\n");
         recipeList.add(a);
 
-        a = new Recipe("Tuna salad sandwich", 123, recipeImages[5], minifrittatas, "hmm");
+        a = new Recipe("Tuna salad sandwich", 634, recipeImages[5], minifrittatas, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Mini frittatas with spinach and bacon", 167, recipeImages[6], loadedOmelette, "\"Preheat oven to 180°C/350°F. Finely dice bacon. Peel and dice onion. Thinly slice green onion. Peel and chop garlic. Roughly chop spinach. Beat eggs with milk in a measuring cup or mixing bowl and season generously with salt and pepper. Set aside.\\n\" +\n" +
+        a = new Recipe("Mini frittatas with spinach and bacon", 98, recipeImages[6], loadedOmelette, "\"Preheat oven to 180°C/350°F. Finely dice bacon. Peel and dice onion. Thinly slice green onion. Peel and chop garlic. Roughly chop spinach. Beat eggs with milk in a measuring cup or mixing bowl and season generously with salt and pepper. Set aside.\\n\" +\n" +
                 "                \"Heat olive oil in a large frying pan set over medium heat. Add diced bacon, onion, and garlic and sauté for approx. 2 – 3 min. Add green onion and spinach, season well with salt and pepper, and fry over medium heat for approx. 4 - 5 min.\\n\" +\n" +
                 "                \"Add spinach mixture and grated Parmesan cheese to egg mixture and stir to combine. Grease muffin cups with butter and spoon mixture into muffin cups.\\n\" +\n" +
                 "                \"Transfer to oven and bake at 180°C/350°F for approx. 20 min., or until golden brown. Serve warm. Enjoy!\"");
         recipeList.add(a);
 
-        a = new Recipe("Tomato and goat cheese tartlets", 1400, recipeImages[7], minifrittatas, "hmm");
+        a = new Recipe("Tomato and goat cheese tartlets", 345, recipeImages[7], minifrittatas, "hmm");
         recipeList.add(a);
 
-        a = new Recipe("Leek and apple quiche with bacon", 110, recipeImages[8], leekAndAppleQuiche, "Cube chilled butter. Pulse the flour, cold butter, egg yolk, and a pinch of salt together with a little cold water until a smooth dough forms. If dough seems too dry, add more cold water a little at a time until dough comes together. Cover for approx. 30 min. with plastic wrap and refrigerate.\n" +
+        a = new Recipe("Leek and apple quiche with bacon", 704, recipeImages[8], leekAndAppleQuiche, "Cube chilled butter. Pulse the flour, cold butter, egg yolk, and a pinch of salt together with a little cold water until a smooth dough forms. If dough seems too dry, add more cold water a little at a time until dough comes together. Cover for approx. 30 min. with plastic wrap and refrigerate.\n" +
                 "Preheat oven to 200°C/400°F. Wash leeks and cut into rings. Core and dice apples. Finely chop hazelnuts and set aside. Mix together the eggs and sour cream and season with salt and pepper.\n" +
                 "Heat oil in a large frying pan set over medium-high heat. Fry the bacon, leeks, and apples together until bacon until browned and fragrant.\n" +
                 "Roll out chilled quiche dough between 2 layers of plastic wrap into a circle approx. 28 cm/11 in. in diameter.\n" +
@@ -211,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
                 "Sprinkle with the remaining hazelnuts and bake for approx. 35 min. at 200°C/400°F. Allow to cool and enjoy!\n");
         recipeList.add(a);
 
-        a = new Recipe("German-style leek and cheese soup", 170, recipeImages[9], leekAndCheeseSoup, "Dice onion. Wash the leeks, then slice into rings.\n" +
+        a = new Recipe("German-style leek and cheese soup", 954, recipeImages[9], leekAndCheeseSoup, "Dice onion. Wash the leeks, then slice into rings.\n" +
                 "Heat oil in a large saucepan set over medium-high heat, then add the ground beef and fry until browned. Add the onion and leeks after approx. 2 min. Cook for approx. 5 min. more. Deglaze with vegetable stock, then let simmer for approx. 10 min.\n" +
                 "Stir in the cheese and let melt. Stir in crème fraîche and boil again briefly.\n" +
                 "Season the soup with salt, pepper, nutmeg, and some lemon zest to taste. Serve with a slice of fresh bread and enjoy!\n");
