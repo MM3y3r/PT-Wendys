@@ -46,10 +46,11 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
         @Override
         public void onClick(View view) {
             Intent intent = new Intent(mContext, RecipeDetail.class);
-            intent.putExtra("recipeIngredients", recipe.getIngredients());
+            intent.putExtra("recipeData",recipe);
+            /*intent.putExtra("recipeIngredients", recipe.getIngredients());
             intent.putExtra("recipeName", recipe.getName());
             intent.putExtra("recipeCals", recipe.getNumOfCalories());
-            intent.putExtra("recipeDesc", recipe.getDescription());
+            intent.putExtra("recipeDesc", recipe.getDescription());*/
             // Pass data object in the bundle and populate details activity.
             //intent.putExtra(RecipeDetail.ExtraData, contact);
             //intent.putExtra("test", "we are totally famous");

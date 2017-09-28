@@ -21,6 +21,7 @@ public class Recipe implements Parcelable {
         this.numOfCalories = source.readInt();
         this.ingredients = source.readArrayList(null);
         this.description = source.readString();
+        this.thumbnail = source.readInt();
 
     }
 
@@ -74,9 +75,9 @@ public class Recipe implements Parcelable {
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(name);
         parcel.writeInt(numOfCalories);
-
         parcel.writeList(ingredients);
         parcel.writeString(description);
+        parcel.writeInt(thumbnail);
     }
 
 

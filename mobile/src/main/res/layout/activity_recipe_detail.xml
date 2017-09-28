@@ -38,19 +38,21 @@
         android:layout_below="@id/appbar">
 
         <ImageView
-            android:id="@+id/recipeImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/image_detail"
+            android:layout_width="match_parent"
+            android:layout_height="600px"
             />
 
         <TextView
-            android:id="@+id/editText2"
+            android:id="@+id/name_detail"
+            android:layout_below="@id/image_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Name" />
 
         <TextView
-            android:id="@+id/editText"
+            android:id="@+id/description_detail"
+            android:layout_below="@id/name_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="abcde"/>
