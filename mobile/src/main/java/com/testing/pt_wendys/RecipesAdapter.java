@@ -31,6 +31,9 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public TextView title, count;
         public ImageView thumbnail, overflow;
+
+
+
         public Recipe recipe;
 
 
@@ -58,6 +61,9 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
             //ActivityOptions options = ActivityOptions.
                     //makeSceneTransitionAnimation(this, (View) RecipeDetail, "recipeDetailContainer");
             mContext.startActivity(intent);
+        }
+        public Recipe getRecipe() {
+            return recipe;
         }
     }
 
@@ -108,15 +114,15 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
         popup.show();
     }
 
+
     /**
      * Click listener for popup menu items
      */
     class MyMenuItemClickListener implements PopupMenu.OnMenuItemClickListener {
 
-        int position;
-        public MyMenuItemClickListener(int position) {
-          position = this.position;
-        }
+        Recipe recipe;
+        RecipesAdapter.MyViewHolder holder;
+        //public MyMenuItemClickListener(int position) {position = this.position;}
 
 
         @Override
@@ -124,8 +130,8 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.MyViewHo
             switch (menuItem.getItemId()) {
                 case R.id.action_add_to_cart:
                     Toast.makeText(mContext, "Add to cart", Toast.LENGTH_SHORT).show();
-                    Recipe recipe = recipeList.get(position);
-                    Log.d("my pos: ",""+position);
+                    recipe = holder.getRecipe();
+                    //Log.d("my pos: ",""+position);
                     Intent viewAddtoCart = new Intent(mContext, Shopping2.class);
                     viewAddtoCart.putExtra("r",recipe);
 
