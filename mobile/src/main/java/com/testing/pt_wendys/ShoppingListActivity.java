@@ -17,7 +17,7 @@ public class ShoppingListActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
     private ListView listView;
-    private ArrayList<Ingredient> ingredientList;
+    //private ArrayList<Ingredient> ingredientList;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -65,11 +65,13 @@ public class ShoppingListActivity extends AppCompatActivity {
 
         if (data != null) {
             Recipe r = data.getParcelable("r");
-            ArrayList<Ingredient> addedIngredients = r.getIngredients();
-            ingredientList.addAll(addedIngredients);
+            //ArrayList<Ingredient> addedIngredients = r.getIngredients();
+            //ingredientList.addAll(addedIngredients);
+            final ArrayList<Ingredient> ingredientList = r.getIngredients()   ;
             final IngredientAdapter adapter = new IngredientAdapter(this, ingredientList);
             listView.setAdapter(adapter);
             adapter.notifyDataSetChanged();
+
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
