@@ -35,6 +35,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+
     private RecyclerView recyclerView;
     private RecipesAdapter adapter;
     private List<Recipe> recipeList;
@@ -47,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_planner:
                     //mTextMessage.setText(R.string.title_home);
-                    Intent viewTest = new Intent(MainActivity.this, testetstsetsetest.class);
+                    Intent viewTest = new Intent(MainActivity.this, MarketFinderActivity.class);
                     //REZEPTUEBERGABE
-                    viewTest.putExtra("r",r);
+                    //viewTest.putExtra("r",r);
                     startActivity(viewTest);
                     return true;
                 case R.id.navigation_recipes:
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_shopping_list:
                     //mTextMessage.setText(R.string.title_notifications);
-                    Intent viewShoppingList = new Intent(MainActivity.this, Shopping2.class);
+                    Intent viewShoppingList = new Intent(MainActivity.this, ShoppingListActivity.class);
                     startActivity(viewShoppingList);
                     return true;
             }
@@ -267,21 +268,4 @@ public class MainActivity extends AppCompatActivity {
         Resources r = getResources();
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
-
-
-/*    private void createRecipe(){
-        int[] foodpic = new int[]{
-                R.drawable.album1};
-
-        Ingredient i1 = new Ingredient (104, "kg", "Avocado");
-
-        Ingredient[] igua = new Ingredient[]{i1};
-
-        Recipe_old r = new Recipe_old ("Guacamole", 15083, foodpic[0], igua, "Avocado aufschneiden und dann Kern raus und keine Lust mehr");
-    }*/
-
-    //Test Parcelable
-
-    Recipe r = new Recipe ("Test", 300, 6, new ArrayList<Ingredient>(), "testBeschreibung" );
-
 }
