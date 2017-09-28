@@ -31,6 +31,11 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * Created by Maximilian Meyer
+ */
+
 //Bottom Nav Bar
 
 public class MainActivity extends AppCompatActivity {

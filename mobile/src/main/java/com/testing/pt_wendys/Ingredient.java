@@ -2,11 +2,13 @@ package com.testing.pt_wendys;
 
 import android.media.Image;
 
+import java.io.Serializable;
+
 /**
  * Created by Kati on 26.09.2017.
  */
 
-public class Ingredient {
+public class Ingredient implements Serializable{
     int amount;
     String unit;
     String name;
