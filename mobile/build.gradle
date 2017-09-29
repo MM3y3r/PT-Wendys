@@ -5,6 +5,8 @@ android {
         release_config {
         }
         debug_config {
+            keyAlias 'debug'
+            keyPassword 'mypassword'
         }
     }
     compileSdkVersion 26
@@ -22,10 +24,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-        debug {
-            signingConfig signingConfigs.debug_config
-            minifyEnabled false
-        }
+        //debug {
+         //   signingConfig signingConfigs.debug_config
+          //  minifyEnabled false
+        //}
     }
 }
 
