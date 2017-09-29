@@ -157,19 +157,19 @@ public class MainActivity extends AppCompatActivity {
 
         Ingredient[] kamuts = {new Ingredient(70, "g", "kamut semolina"), new Ingredient(375, "ml", "plant-based milk"), new Ingredient(2, "tbsp", "poppy seeds"), new Ingredient(1, "tbsp", "maple syrup"), new Ingredient(200, "g", "fresh berries (e.g. raspberries, blueberries, gooseberries"), new Ingredient(1, " ", "maple syrup for serving")};
         ArrayList<Ingredient> kamutPorridge = new ArrayList<Ingredient>();
-        kamutPorridge.addAll(Arrays.asList(minifritt));
+        kamutPorridge.addAll(Arrays.asList(kamuts));
 
         Ingredient[] loadedO = {new Ingredient(5, " ", "eggs"), new Ingredient(100, "ml", "milk"), new Ingredient(100, "g", "cherry tomatoes"), new Ingredient(1, "bell", "pepper (red"), new Ingredient(1, "", "avocado"), new Ingredient(2, "", "spring onions"),new Ingredient(100, "", "gchorizo"), new Ingredient(100, "g", "mozzarella cheese"), new Ingredient(10, "g", "parsley"), new Ingredient(1, "tsp", "oregano (dried)"), new Ingredient(1, "", "nutmeg"),new Ingredient(1, "", "butter for frying"), new Ingredient(1, "", "salt"), new Ingredient(1, "", "pepper")};
         ArrayList<Ingredient> loadedOmelette = new ArrayList<Ingredient>();
-        kamutPorridge.addAll(Arrays.asList(loadedO));
+        loadedOmelette.addAll(Arrays.asList(loadedO));
 
         Ingredient[] leekAndCheese = {new Ingredient(500, "g", "ground beef"), new Ingredient(2, "", "leeks"), new Ingredient(1, "", "onion (white)"), new Ingredient(750, "ml", "vegetable stock"), new Ingredient(400, "g", "melting cheese"), new Ingredient(1, "tbsp", "vegetable oil"), new Ingredient(200, "g", "crème fraiche"), new Ingredient(1, "", "salt"), new Ingredient(1, "", "pepper"), new Ingredient(1, "", "lemon zest fpr serving"), new Ingredient(1, "", "nutmeg for serving"), new Ingredient(1, "", "bread for serving")};
         ArrayList<Ingredient> leekAndCheeseSoup = new ArrayList<Ingredient>();
-        kamutPorridge.addAll(Arrays.asList(leekAndCheese));
+        leekAndCheeseSoup.addAll(Arrays.asList(leekAndCheese));
 
         Ingredient[] leekAndAppleQ = {new Ingredient(250, "g", "spelt flour"), new Ingredient(150, "g", "butter (cold)"), new Ingredient(2, "egg", "volks"), new Ingredient(2, "tbsp", "water"), new Ingredient(1, "", "leek"), new Ingredient(1, "", "apples"), new Ingredient(50, "g", "hazelnuts"), new Ingredient(2, "", "eggs"), new Ingredient(400, "ml", "sour cream"), new Ingredient(1, "tbsp", "vegetable oil"), new Ingredient(200, "g", "bacon"), new Ingredient(1, "", "butter for greasing"), new Ingredient(1, "", "salt"), new Ingredient(1, "", "pepper"), };
         ArrayList<Ingredient> leekAndAppleQuiche = new ArrayList<Ingredient>();
-        kamutPorridge.addAll(Arrays.asList(leekAndCheese));
+        leekAndAppleQuiche.addAll(Arrays.asList(leekAndCheese));
 
         // Rezept: Name, Kalorien, Bild, Array Ingredients, Beschreibung
 
