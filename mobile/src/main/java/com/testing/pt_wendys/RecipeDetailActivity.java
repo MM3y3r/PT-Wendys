@@ -43,10 +43,13 @@ public class RecipeDetailActivity extends AppCompatActivity {
 
         Log.d("my name: ",recipe.getName());
 
+        ListView ingredientsList;
+
         //setting image data
         ImageView detailImage = findViewById(R.id.image_detail);
         Drawable d = getResources().getDrawable(recipe.getThumbnail(), null);
         detailImage.setImageDrawable(d);
+
 
         //setting name
         TextView detailName = findViewById(R.id.name_detail);
@@ -59,8 +62,9 @@ public class RecipeDetailActivity extends AppCompatActivity {
         // ingredients list
         // This is the Adapter being used to display the list's data
         SimpleCursorAdapter mAdapter;
-        ListView ingredientsList = findViewById(R.id.ingredients_detail);
+        ingredientsList = findViewById(R.id.ingredients_detail);
         //ingredientsList.set
+
 
         final ArrayList<Ingredient> ingredientList = recipe.getIngredients()   ;
         final IngredientAdapter adapter = new IngredientAdapter(this, ingredientList);

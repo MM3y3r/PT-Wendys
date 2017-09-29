@@ -3,8 +3,8 @@
 
     <item
         android:id="@+id/navigation_planner"
-        android:icon="@drawable/ic_perm_contact_calendar_48pt_3x"
-        android:title="@string/title_planner" />
+        android:icon="@drawable/location"
+        android:title="Supermarkets" />
 
     <item
         android:id="@+id/navigation_recipes"
