@@ -11,5 +11,6 @@ Functionality:
 - Add ingredients to your shopping cart
 - Use Google Maps to find supermarkets in your vicinity
 
+Planning board : https://trello.com/b/QH6Znz0X/persuasive-technology
 
 *by Team PT-Wendys*
