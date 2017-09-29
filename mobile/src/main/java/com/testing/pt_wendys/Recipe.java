@@ -19,7 +19,8 @@ public class Recipe implements Parcelable {
     public Recipe(Parcel source) {
         this.name = source.readString();
         this.numOfCalories = source.readInt();
-        this.ingredients = source.readArrayList(null);
+        this.ingredients = new ArrayList<Ingredient>();
+        source.readList(ingredients, getClass().getClassLoader());
         this.description = source.readString();
         this.thumbnail = source.readInt();
 
