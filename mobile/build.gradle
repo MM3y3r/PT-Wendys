@@ -1,6 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        release_config {
+        }
+        debug_config {
+        }
+    }
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
     defaultConfig {
@@ -16,26 +22,24 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug {
+            signingConfig signingConfigs.debug_config
+            minifyEnabled false
+        }
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     // RecyclerView
-
     // CardView
-
     // Glide
-
-//    androidTestCompile('com.android.support.ShoppingList.espresso:espresso-core:2.2.2', {
-//        exclude group: 'com.android.support', module: 'support-annotations'
-//    })
+    //    androidTestCompile('com.android.support.ShoppingList.espresso:espresso-core:2.2.2', {
+    //        exclude group: 'com.android.support', module: 'support-annotations'
+    //    })
     wearApp project(':wear')
-
     // NO JUNIT
     //testCompile 'junit:junit:4.12'
-
     compile 'com.android.support:recyclerview-v7:26.+'
     compile 'com.android.support:cardview-v7:26.+'
     compile 'com.github.bumptech.glide:glide:3.7.0'
