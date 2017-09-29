@@ -147,7 +147,7 @@ public class ShoppingListActivity extends AppCompatActivity {
         Gson gson = new Gson();
         SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
         String savedjson =prefs.getString("savedJson", null);
-        savedjson.length();
+
         ArrayList<Ingredient> savedIngredients = gson.fromJson(savedjson, new TypeToken<ArrayList<Ingredient>>() {
         }.getType());
 
@@ -164,7 +164,7 @@ public class ShoppingListActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
         Gson gson = new Gson();
         String json = gson.toJson(ingredientList); // myObject - instance of MyObject
-        json.length();
+
         editor.putString("savedJson",json);
         // PreferencesUtils.getInstance(context).setString("players", toJson((.....ArrayList you want to convert.....)));
 
