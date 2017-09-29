@@ -66,10 +66,10 @@
 
         <ListView
             android:id="@+id/ingredients_detail"
-            style="@style/Widget.AppCompat.ListView.DropDown"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="none"></ListView>
+            android:layout_height="264dp">
+
+        </ListView>
 
     </LinearLayout>
     </ScrollView>
