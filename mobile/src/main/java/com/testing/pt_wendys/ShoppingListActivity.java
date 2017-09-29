@@ -121,7 +121,7 @@ public class ShoppingListActivity extends AppCompatActivity {
 
 
     private ArrayList<Ingredient> updateIngredientList (final ArrayList<Ingredient> ingredientList){
-        ingredientList.toString();
+
         final IngredientAdapter adapter = new IngredientAdapter(this, ingredientList);
             listView.setAdapter(adapter);
             adapter.notifyDataSetChanged();
@@ -129,12 +129,19 @@ public class ShoppingListActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l){
-                ingredientList.remove(position);
+                 ingredientList.remove(position);
+
                 adapter.notifyDataSetChanged();
+                updateData(ingredientList);
             }
         });
-        return  ingredientList;
+        return ingredientList;
         }
+
+    private ArrayList<Ingredient> updateData(ArrayList<Ingredient> ingredientList) {
+        return ingredientList;
+    }
+
 
     private ArrayList<Ingredient>  getSavedList(){
         Gson gson = new Gson();
