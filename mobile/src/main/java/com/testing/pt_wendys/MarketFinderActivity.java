@@ -12,11 +12,14 @@ import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
 import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.places.Places;
+import com.google.android.gms.location.places.ui.PlacePicker;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -91,6 +94,36 @@ public class MarketFinderActivity extends FragmentActivity implements OnMapReady
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        if( mGoogleApiClient != null )
+            mGoogleApiClient.connect();
+    }
+
+    @Override
+    protected void onStop() {
+        if( mGoogleApiClient != null && mGoogleApiClient.isConnected() ) {
+            mGoogleApiClient.disconnect();
+        }
+        super.onStop();
+    }
+
+    private void displayPlacePicker() {
+        if( mGoogleApiClient == null || !mGoogleApiClient.isConnected() )
+            return;
+
+        PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
+
+        try {
+            startActivityForResult( builder.build( this ), 1 );
+        } catch ( GooglePlayServicesRepairableException e ) {
+            Log.d( "PlacesAPI Demo", "GooglePlayServicesRepairableException thrown" );
+        } catch ( GooglePlayServicesNotAvailableException e ) {
+            Log.d( "PlacesAPI Demo", "GooglePlayServicesNotAvailableException thrown" );
+        }
+    }
+
+    @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
@@ -138,9 +171,9 @@ public class MarketFinderActivity extends FragmentActivity implements OnMapReady
         //mMap.addMarker(new MarkerOptions().position(new LatLng(myLocation.getLatitude(), myLocation.getLongitude())).title("It's Me!"));
 
         // Add a marker in Sydney and move the camera
-        //LatLng me = new LatLng(myLocation.getLatitude(), myLocation.getLongitude());
+        //LatLng myLocation = new LatLng(mMap.getMyLocation().getLatitude(), mMap.getMyLocation().getLongitude());
         //mMap.addMarker(new MarkerOptions().position(me).title("It's me!"));
-        //mMap.moveCamera(CameraUpdateFactory.newLatLng());
+        //mMap.moveCamera(CameraUpdateFactory.newLatLng(myLocation));
     }
 
     @Override
