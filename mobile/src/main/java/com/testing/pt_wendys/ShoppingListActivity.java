@@ -150,7 +150,9 @@ public class ShoppingListActivity extends AppCompatActivity {
 
         ArrayList<Ingredient> savedIngredients = gson.fromJson(savedjson, new TypeToken<ArrayList<Ingredient>>() {
         }.getType());
-
+        if(savedIngredients == null){
+            savedIngredients = new ArrayList<>();
+        }
         return savedIngredients;
     }
     @Override
